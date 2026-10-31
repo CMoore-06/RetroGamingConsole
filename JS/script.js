@@ -16,7 +16,7 @@ function LoadConsoles() {
 
     xhr.onreadystatechange = () => {
         if(xhr.readyState != 4) {
-            loadingMessage.textContent = "loading consoles...";
+            loadingMessage.textContent = "Loading consoles...";
         }
 
         else {
@@ -60,7 +60,10 @@ function LoadConsoles() {
             }
 
             else if(xhr.status != 200) {
-                errorMessage.textContent = `Error: ${xhr.readyState}, ${xhr.statusCode}, ${xhr.status}`;
+                errorMessage.innerHTML = `Error: <br> 
+                    Ready State: ${xhr.readyState} <br> 
+                    Status Code: ${xhr.statusCode} <br>
+                    Status: ${xhr.status}`;
             }
         }
     }
