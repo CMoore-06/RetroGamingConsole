@@ -61,6 +61,7 @@ function LoadConsoles() {
                     //Add the card to the webpage.
                     document.getElementById("consoleList").append(card);
                 }
+                WriteSummary(consoleArray);
             }
 
             else if(xhr.status != 200) {
@@ -68,4 +69,30 @@ function LoadConsoles() {
             }
         }
     }
+}
+
+function WriteSummary(consoles) {
+    //Declare variables to be used in the loops.
+    let oldest = consoles[0];
+    let newest = consoles[0];
+
+    //Loop through the array to find the oldest and newest consoles.
+    for (let i = 0; i < consoles.length; i++) {
+        if(consoles[i].year < oldest.year) {
+            oldest = consoles[i];
+        }
+    }
+
+    for(let i = 0; i < consoles.length; i++) {
+        if(consoles[i].year > newest.year) {
+            newest = consoles[i]
+        }
+    }
+
+    //Write the summary.
+    document.getElementById("summaryHeading").textContent = 'Summary:'
+
+    document.getElementById("summaryMessage").innerHTML = `${consoles.length} consoles. <br>
+        Oldest console: ${oldest.name} (${oldest.year}). <br>
+        Newest console: ${newest.name} (${newest.year}).`;
 }
