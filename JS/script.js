@@ -48,11 +48,6 @@ function LoadConsoles() {
                     img.src = consoleArray[i].image;
                     img.alt = consoleArray[i].name;
 
-                    //Style the content.
-                    heading.style.textDecoration = "underline";
-                    img.style.width = "500px";
-                    img.style.height = "auto";
-
                     //Add the content to the card.
                     card.append(heading);
                     card.append(year);
@@ -90,7 +85,10 @@ function WriteSummary(consoles) {
     }
 
     //Write the summary.
-    document.getElementById("summaryHeading").textContent = 'Summary:'
+    let summaryHeading =document.getElementById("summaryHeading");  
+    summaryHeading.textContent = 'Summary:';
+    summaryHeading.style.textDecoration = 'underline';
+    summaryHeading.style.fontWeight = 'bold';
 
     document.getElementById("summaryMessage").innerHTML = `${consoles.length} consoles. <br>
         Oldest console: ${oldest.name} (${oldest.year}). <br>

@@ -1,0 +1,57 @@
+/* HTML Elements */
+body {
+    text-align: center;
+    background-color: darkgreen;
+    color: white;
+}
+
+header {
+    margin: 5px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Divs and Sections */
+
+/* Classes and Ids */
+.card {
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: green;
+    width: 100%;
+}
+
+#getConsoles {
+    background-color: black;
+    color: green;
+}
+
+/* Media Statements */
+@media (width > 752px) {
+    .card {
+        width: 45%;
+        margin: 5px;
+        align-items: center;
+    }
+
+    img {
+        width: 90%;
+    }
+
+    #consoleList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
